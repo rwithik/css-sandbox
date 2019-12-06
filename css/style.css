@@ -1,0 +1,162 @@
+ @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  height: 100vh;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 1em;
+}
+
+.cards {
+  background-color: #ffcfbe;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Cards */
+
+.card-container {
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1em 3em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+  height: 40vh;
+  width: 20vw;
+  background-color: teal;
+  color: white;
+  border-radius: 10px;
+}
+
+/* Card 1 */
+
+.hover-card {
+  position: relative;
+  transition: color ease-in 150ms;
+  background: url('/images/400x400/1.jpg')
+}
+
+.hover-card::before {
+  content: '';
+  top: 0;
+  position: absolute;
+  width: calc(100% - 2em);
+  height: calc(100% - 2em);
+  transform: scale(0, 1);
+  transition: transform linear 150ms;
+  margin: 1em 1em;
+}
+
+.hover-card::before {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hover-card:hover {
+  color: transparent;
+}
+
+.hover-card p.hidden-content {
+  text-transform: capitalize;
+  color: transparent;
+  transition: color 150ms linear;
+  z-index: 1;
+}
+
+.hover-card:hover p.hidden-content {
+  color: white;
+}
+
+.hover-card:hover::before {
+  transform: scale(1, 1)
+}
+
+
+/* Card 2 */
+
+.border-card {
+  position: relative;
+  background: url('/images/400x400/3.jpg');
+}
+
+.border-card::before,
+.border-card::after {
+  content: '';
+  position: absolute;
+  border: 1px solid white;
+  /* opacity: 0; */
+  /* transition: opacity 150ms ease-in; */
+  transition: transform 250ms cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.border-card::before {
+  right: 1em;
+  height: 90%;
+  transform: scaleY(0.1);
+  transform-origin: bottom;
+}
+
+.border-card::after {
+  bottom: 1em;
+  width: 90%;
+  transform: scaleX(0.1);
+  transform-origin: right;
+}
+
+/* .border-card:hover::before,
+.border-card:hover::after {
+  opacity: 1;
+} */
+
+.border-card:hover::before {
+  transform: scaleY(1);
+}
+
+.border-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Card 3 */
+
+.border-card-2 {
+  position: relative;
+  background: url('/images/400x400/4.jpg');
+  color: black;
+}
+
+.border-card-2::before,
+.border-card-2::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+}
+
+.border-card-2::before {
+  border-top: 1px solid black;
+  border-bottom: 2px solid white;
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.border-card-2:hover::before {
+  transform: scaleX(1);
+}
