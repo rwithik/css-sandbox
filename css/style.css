@@ -51,7 +51,7 @@ h1 {
 .hover-card {
   position: relative;
   transition: color ease-in 150ms;
-  background: url('./images/400x400/1.jpg')
+  background: url('../images/400x400/1.jpg')
 }
 
 .hover-card::before {
@@ -93,7 +93,7 @@ h1 {
 
 .border-card {
   position: relative;
-  background: url('./images/400x400/3.jpg');
+  background: url('../images/400x400/3.jpg');
 }
 
 .border-card::before,
@@ -137,7 +137,7 @@ h1 {
 
 .border-card-2 {
   position: relative;
-  background: url('./images/400x400/4.jpg');
+  background: url('../images/400x400/4.jpg');
   color: black;
 }
 
