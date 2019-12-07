@@ -1,9 +1,9 @@
- @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap");
 *, *::after, *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 section {
@@ -23,35 +23,53 @@ h1 {
 }
 
 /* Cards */
-
 .card-container {
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   grid-gap: 1em 3em;
 }
 
 .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 1.5em;
   height: 40vh;
   width: 20vw;
   background-color: teal;
   color: white;
   border-radius: 10px;
+  -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 
 /* Card 1 */
-
 .hover-card {
   position: relative;
+  -webkit-transition: color ease-in 150ms;
   transition: color ease-in 150ms;
-  background: url('../images/400x400/1.jpg')
+  background: url("../images/400x400/1.jpg");
 }
 
 .hover-card::before {
@@ -60,8 +78,12 @@ h1 {
   position: absolute;
   width: calc(100% - 2em);
   height: calc(100% - 2em);
-  transform: scale(0, 1);
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: -webkit-transform linear 150ms;
+  transition: -webkit-transform linear 150ms;
   transition: transform linear 150ms;
+  transition: transform linear 150ms, -webkit-transform linear 150ms;
   margin: 1em 1em;
 }
 
@@ -73,76 +95,77 @@ h1 {
   color: transparent;
 }
 
-.hover-card p.hidden-content {
-  text-transform: capitalize;
-  color: transparent;
-  transition: color 150ms linear;
-  z-index: 1;
-}
-
 .hover-card:hover p.hidden-content {
   color: white;
 }
 
 .hover-card:hover::before {
-  transform: scale(1, 1)
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
+.hover-card p.hidden-content {
+  text-transform: capitalize;
+  color: transparent;
+  -webkit-transition: color 150ms linear;
+  transition: color 150ms linear;
+  z-index: 1;
+}
 
 /* Card 2 */
-
 .border-card {
   position: relative;
-  background: url('../images/400x400/3.jpg');
+  background: url("../images/400x400/3.jpg");
 }
 
-.border-card::before,
-.border-card::after {
+.border-card::before, .border-card::after {
   content: '';
   position: absolute;
   border: 1px solid white;
   /* opacity: 0; */
   /* transition: opacity 150ms ease-in; */
-  transition: transform 250ms cubic-bezier(.68,-0.55,.27,1.55);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55), -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .border-card::before {
   right: 1em;
   height: 90%;
-  transform: scaleY(0.1);
-  transform-origin: bottom;
+  -webkit-transform: scaleY(0.1);
+          transform: scaleY(0.1);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
 .border-card::after {
   bottom: 1em;
   width: 90%;
-  transform: scaleX(0.1);
-  transform-origin: right;
+  -webkit-transform: scaleX(0.1);
+          transform: scaleX(0.1);
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
-
-/* .border-card:hover::before,
-.border-card:hover::after {
-  opacity: 1;
-} */
 
 .border-card:hover::before {
-  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 .border-card:hover::after {
-  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 /* Card 3 */
-
 .border-card-2 {
   position: relative;
-  background: url('../images/400x400/4.jpg');
+  background: url("../images/400x400/4.jpg");
   color: black;
 }
 
-.border-card-2::before,
-.border-card-2::after {
+.border-card-2::before, .border-card-2::after {
   content: '';
   position: absolute;
   z-index: 1;
@@ -153,10 +176,54 @@ h1 {
 .border-card-2::before {
   border-top: 1px solid black;
   border-bottom: 2px solid white;
-  transform: scaleX(0);
-  transition: transform 250ms cubic-bezier(.68,-0.55,.27,1.55);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55), -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .border-card-2:hover::before {
-  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
+
+/* Button Effects */
+.buttons {
+  background-color: #fff388;
+}
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10vh;
+}
+
+.button-container button {
+  border: none;
+  background-color: black;
+  color: #fff388;
+  padding: 1em 2em;
+  border-radius: 2em;
+}
+
+.button-container #button-1 {
+  border-radius: 2em;
+}
+
+.button-container #button-1:focus, .button-container #button-1:focus-within, .button-container #button-1:hover {
+  -webkit-box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
+          box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
+}
+/*# sourceMappingURL=style.css.map */
