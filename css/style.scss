@@ -106,8 +106,6 @@ h1 {
     content: '';
     position: absolute;
     border: 1px solid white;
-    /* opacity: 0; */
-    /* transition: opacity 150ms ease-in; */
     transition: transform 250ms cubic-bezier(.68,-0.55,.27,1.55);
   }
 
@@ -189,6 +187,11 @@ h1 {
     color: $background;
     padding: 1em 2em;
     border-radius: 2em;
+    outline: none;
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
   }
 
   #button-1 {
@@ -202,4 +205,35 @@ h1 {
     }
     
   }
+}
+
+/* Text Effect */
+
+.text-effects {
+  background-color: rgb(255, 196, 179);
+
+  .text-effects-container {
+    display: flex;
+    flex-direction: columns;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .moving-gradient {
+    font-size: xx-large;
+    font-weight: bold;
+    background-image: linear-gradient(to right,red, purple, green);
+    background-clip: text;
+    color: transparent;
+    background-size: 300%;
+    background-position: left;
+    transition: background-position 250ms ease-in;
+
+    &:hover {
+      background-position: right;
+    }
+
+  }
+
 }
