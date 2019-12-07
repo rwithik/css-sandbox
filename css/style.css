@@ -210,10 +210,10 @@ h1 {
 
 .button-container button {
   border: none;
-  background-color: black;
-  color: #fff388;
+  background-color: #fff388;
+  color: black;
   padding: 1em 2em;
-  border-radius: 2em;
+  border: 2px solid black;
   outline: none;
 }
 
@@ -221,11 +221,24 @@ h1 {
   border: 0;
 }
 
-.button-container #button-1 {
+#button-1 {
   border-radius: 2em;
 }
 
-.button-container #button-1:focus, .button-container #button-1:focus-within, .button-container #button-1:hover {
+#button-1:focus, #button-1:focus-within, #button-1:hover {
+  background-color: black;
+  color: #fff388;
+  -webkit-box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
+          box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
+}
+
+#button-2 {
+  position: relative;
+}
+
+#button-2:focus, #button-2:focus-within, #button-2:hover {
+  background-color: black;
+  color: #fff388;
   -webkit-box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
           box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
 }

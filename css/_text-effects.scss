@@ -1,0 +1,29 @@
+
+.text-effects {
+    background-color: rgb(255, 196, 179);
+  
+    .text-effects-container {
+      display: flex;
+      flex-direction: columns;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  
+    .moving-gradient {
+      font-size: xx-large;
+      font-weight: bold;
+      background-image: linear-gradient(to right,red, purple, green);
+      background-clip: text;
+      color: transparent;
+      background-size: 300%;
+      background-position: left;
+      transition: background-position 250ms ease-in;
+  
+      &:hover {
+        background-position: right;
+      }
+  
+    }
+  
+  }

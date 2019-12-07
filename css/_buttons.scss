@@ -1,0 +1,54 @@
+
+.buttons {
+  background-color: rgb(255, 243, 136);
+}
+
+$background: rgb(255, 243, 136);
+$clr-primary: black;
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10vh;
+
+	button {
+  	border: none;
+  	background-color: $background;
+		color: $clr-primary;
+  	padding: 1em 2em;
+		border: 2px solid $clr-primary;
+  	outline: none;
+  	&::-moz-focus-inner {
+  	  border: 0;
+  	  }
+		}
+		
+}	
+
+#button-1 {
+  border-radius: 2em;
+  &:focus,
+  &:focus-within,
+  &:hover {
+		background-color: $clr-primary;
+		color: $background;
+  	box-shadow: 0 0 0 5px $background,
+    	          0 0 0 10px $clr-primary;
+  }
+
+}
+ 
+#button-2 {
+	position: relative;
+
+	&:focus,
+	&:focus-within,
+	&:hover {
+		background-color: $clr-primary;
+		color: $background;
+  	box-shadow: 0 0 0 5px $background,
+    	          0 0 0 10px $clr-primary;
+	}
+}
