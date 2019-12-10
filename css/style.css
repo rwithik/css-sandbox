@@ -73,7 +73,7 @@ h1 {
 }
 
 .hover-card::before {
-  content: '';
+  content: "";
   top: 0;
   position: absolute;
   width: calc(100% - 2em);
@@ -119,7 +119,7 @@ h1 {
 }
 
 .border-card::before, .border-card::after {
-  content: '';
+  content: "";
   position: absolute;
   border: 1px solid white;
   -webkit-transition: -webkit-transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -164,7 +164,7 @@ h1 {
 }
 
 .border-card-2::before, .border-card-2::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 1;
   width: 90%;
@@ -189,7 +189,7 @@ h1 {
 
 /* Button Effects */
 .buttons {
-  background-color: #fff388;
+  background-color: #c4b431;
 }
 
 .button-container {
@@ -210,10 +210,7 @@ h1 {
 
 .button-container button {
   border: none;
-  background-color: #fff388;
-  color: black;
   padding: 1em 2em;
-  border: 2px solid black;
   outline: none;
 }
 
@@ -222,25 +219,134 @@ h1 {
 }
 
 #button-1 {
+  background-color: #c4b431;
+  color: black;
+  border: 2px solid black;
   border-radius: 2em;
 }
 
 #button-1:focus, #button-1:focus-within, #button-1:hover {
   background-color: black;
-  color: #fff388;
-  -webkit-box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
-          box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
+  color: #c4b431;
+  -webkit-box-shadow: 0 0 0 5px #c4b431, 0 0 0 10px black;
+          box-shadow: 0 0 0 5px #c4b431, 0 0 0 10px black;
 }
 
 #button-2 {
-  position: relative;
+  background-color: #c4b431;
+  color: black;
+  border: 2px solid black;
 }
 
 #button-2:focus, #button-2:focus-within, #button-2:hover {
   background-color: black;
-  color: #fff388;
-  -webkit-box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
-          box-shadow: 0 0 0 5px #fff388, 0 0 0 10px black;
+  color: #c4b431;
+  -webkit-box-shadow: 0 0 0 5px #c4b431, 0 0 0 10px black;
+          box-shadow: 0 0 0 5px #c4b431, 0 0 0 10px black;
+}
+
+.button-3-div {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-3-div #button-3 {
+  background-color: black;
+  color: #c4b431;
+}
+
+.button-3-div .left {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), to(aqua));
+  background-image: linear-gradient(to top, transparent, aqua);
+  animation: animate-vert ease-in-out 1s infinite reverse;
+}
+
+.button-3-div .top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), to(aqua));
+  background-image: linear-gradient(to right, transparent, aqua);
+  -webkit-animation: animate-horz ease-in-out 1s infinite;
+          animation: animate-horz ease-in-out 1s infinite;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.button-3-div .bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), to(aqua));
+  background-image: linear-gradient(to left, transparent, aqua);
+  animation: animate-horz ease-in-out 1s infinite reverse;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.button-3-div .right {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(aqua));
+  background-image: linear-gradient(to bottom, transparent, aqua);
+  -webkit-animation: animate-vert ease-in-out 1s infinite;
+          animation: animate-vert ease-in-out 1s infinite;
+}
+
+@-webkit-keyframes animate-vert {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@keyframes animate-vert {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes animate-horz {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes animate-horz {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
 }
 
 /* Text Effect */

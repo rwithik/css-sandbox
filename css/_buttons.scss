@@ -1,10 +1,10 @@
+// $background: rgb(255, 243, 136);
+$background: #c4b431;
+$clr-primary: black;
 
 .buttons {
-  background-color: rgb(255, 243, 136);
+  background-color: $background;
 }
-
-$background: rgb(255, 243, 136);
-$clr-primary: black;
 
 .button-container {
   display: flex;
@@ -13,42 +13,108 @@ $clr-primary: black;
   justify-content: space-around;
   padding: 10vh;
 
-	button {
-  	border: none;
-  	background-color: $background;
-		color: $clr-primary;
-  	padding: 1em 2em;
-		border: 2px solid $clr-primary;
-  	outline: none;
-  	&::-moz-focus-inner {
-  	  border: 0;
-  	  }
-		}
-		
-}	
+  button {
+    border: none;
+    padding: 1em 2em;
+    outline: none;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  }
+}
 
 #button-1 {
+  background-color: $background;
+  color: $clr-primary;
+  border: 2px solid $clr-primary;
   border-radius: 2em;
+
   &:focus,
   &:focus-within,
   &:hover {
-		background-color: $clr-primary;
-		color: $background;
-  	box-shadow: 0 0 0 5px $background,
-    	          0 0 0 10px $clr-primary;
+    background-color: $clr-primary;
+    color: $background;
+    box-shadow: 0 0 0 5px $background, 0 0 0 10px $clr-primary;
+  }
+}
+
+#button-2 {
+  background-color: $background;
+  color: $clr-primary;
+  border: 2px solid $clr-primary;
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    background-color: $clr-primary;
+    color: $background;
+    box-shadow: 0 0 0 5px $background, 0 0 0 10px $clr-primary;
+  }
+}
+
+.button-3-div {
+  position: relative;
+  overflow: hidden;
+
+  #button-3 {
+    background-color: $clr-primary;
+    color: $background;
   }
 
-}
- 
-#button-2 {
-	position: relative;
+  .left {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    background-image: linear-gradient(to top, transparent, aqua);
+    animation: animate-vert ease-in-out 1s infinite reverse;
+  }
+  .top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-image: linear-gradient(to right, transparent, aqua);
+    animation: animate-horz ease-in-out 1s infinite;
+    animation-delay: 500ms;
+  }
+  .bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-image: linear-gradient(to left, transparent, aqua);
+    animation: animate-horz ease-in-out 1s infinite reverse;
+    animation-delay: 500ms;
+  }
+  .right {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    background-image: linear-gradient(to bottom, transparent, aqua);
+    animation: animate-vert ease-in-out 1s infinite;
+  }
 
-	&:focus,
-	&:focus-within,
-	&:hover {
-		background-color: $clr-primary;
-		color: $background;
-  	box-shadow: 0 0 0 5px $background,
-    	          0 0 0 10px $clr-primary;
-	}
+  @keyframes animate-vert {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes animate-horz {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 }
