@@ -360,14 +360,13 @@ h1 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: columns;
-          flex-direction: columns;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   position: relative;
 }
 
@@ -386,5 +385,31 @@ h1 {
 
 .text-effects .moving-gradient:hover {
   background-position: right;
+}
+
+.text-effects .smooth-animation {
+  overflow: visible;
+}
+
+.text-effects .fade-disabled {
+  display: inline-block;
+  overflow: visible;
+  color: black;
+  z-index: 1;
+  font-size: xx-large;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-transform: translateY(1em);
+          transform: translateY(1em);
+  -webkit-transition: opacity 100ms ease-in, -webkit-transform 100ms ease-in;
+  transition: opacity 100ms ease-in, -webkit-transform 100ms ease-in;
+  transition: transform 100ms ease-in, opacity 100ms ease-in;
+  transition: transform 100ms ease-in, opacity 100ms ease-in, -webkit-transform 100ms ease-in;
+}
+
+.text-effects .fade-in {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

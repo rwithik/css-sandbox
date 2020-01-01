@@ -1,29 +1,49 @@
-
 .text-effects {
-    background-color: rgb(255, 196, 179);
-  
-    .text-effects-container {
-      display: flex;
-      flex-direction: columns;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-  
-    .moving-gradient {
-      font-size: xx-large;
-      font-weight: bold;
-      background-image: linear-gradient(to right,red, purple, green);
-      background-clip: text;
-      color: transparent;
-      background-size: 300%;
-      background-position: left;
-      transition: background-position 250ms ease-in;
-  
-      &:hover {
-        background-position: right;
-      }
-  
-    }
-  
+  background-color: rgb(255, 196, 179);
+
+  .text-effects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
   }
+
+  .moving-gradient {
+    font-size: xx-large;
+    font-weight: bold;
+    background-image: linear-gradient(to right, red, purple, green);
+    background-clip: text;
+    color: transparent;
+    background-size: 300%;
+    background-position: left;
+    transition: background-position 250ms ease-in;
+
+    &:hover {
+      background-position: right;
+    }
+  }
+
+  .smooth-animation {
+    overflow: visible;
+  }
+
+  .fade-disabled {
+    // width: auto;
+    // height: auto;
+    display: inline-block;
+    overflow: visible;
+    color: black;
+    z-index: 1;
+    font-size: xx-large;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(1em);
+    transition: transform 100ms ease-in, opacity 100ms ease-in;
+  }
+
+  .fade-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
